@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+/*const mongoose = require("mongoose");
 
 const eventSchema = new mongoose.Schema({
     title: String,
@@ -10,3 +10,13 @@ const eventSchema = new mongoose.Schema({
 });
 
 module.exports = mongoose.model("Event", eventSchema);
+*/
+
+const Event = sequelize.define("Event", {
+    title: DataTypes.STRING,
+    description: DataTypes.TEXT,
+    date: DataTypes.DATE,
+    venue: DataTypes.STRING,
+    imageUrl: DataTypes.STRING
+});
+module.exports = Event;
