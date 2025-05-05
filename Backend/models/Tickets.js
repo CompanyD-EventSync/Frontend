@@ -1,3 +1,4 @@
+/*
 const ticketSchema = new mongoose.Schema({
     eventId: { type: mongoose.Schema.Types.ObjectId, ref: "Event" },
     title: String,
@@ -5,3 +6,11 @@ const ticketSchema = new mongoose.Schema({
     quantity: Number
 });
 module.exports = mongoose.model("Ticket", ticketSchema);
+*/
+
+const Ticket = sequelize.define("Ticket", {
+    title: DataTypes.STRING,
+    price: DataTypes.FLOAT,
+    quantity: DataTypes.INTEGER
+});
+module.exports = Ticket;
