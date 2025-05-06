@@ -1,8 +1,8 @@
 import React from "react";
-import { FiMenu, FiLogOut, FiSearch } from "react-icons/fi";
+import { FiLogOut, FiSearch } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
-export default function HomePage() {
+export default function Dashboard() {
   return (
     <div className="h-screen flex font-sans bg-gray-100">
       
@@ -10,18 +10,19 @@ export default function HomePage() {
       <aside className="w-64 bg-purple-200 p-4 flex flex-col justify-between">
         <div>
           <h2 className="text-2xl font-bold text-purple-800 mb-8">☰ Menu</h2>
-          <nav className="space-y-4 text-purple-900 font-semibold">
-            <a href="#">📊 Dashboard</a>
-            <a href="#">📅 Bookings</a>
-            <a href="#">🎵 Events</a>
-            <a href="#">📄 Invoices</a>
-            <a href="#">📝 Reviews</a>
+          <nav className="space-y-4 text-purple-900 font-semibold flex flex-col">
+            <Link to="/dashboard" className="block hover:text-purple-700">📊 Dashboard</Link>
+            <Link to="/bookings" className="block hover:text-purple-700">📅 Bookings</Link>
+            <Link to="/events" className="block hover:text-purple-700">🎵 Events</Link>
+            <Link to="/invoices" className="block hover:text-purple-700">📄 Invoices</Link>
+            <Link to="/reviews" className="block hover:text-purple-700">📝 Reviews</Link>
           </nav>
+
         </div>
-        <button className="flex items-center text-purple-800 gap-2 hover:text-purple-900">
+        <Link to="/login" className="flex items-center text-purple-800 gap-2 hover:text-purple-900">
           <FiLogOut />
           Sign Out
-        </button>
+        </Link>
       </aside>
 
       {/* Main Content */}
@@ -55,7 +56,6 @@ export default function HomePage() {
               </ul>
             </div>
 
-            {/* Spacer or More content in future */}
             <div></div>
           </div>
 
